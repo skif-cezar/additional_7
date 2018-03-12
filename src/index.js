@@ -1,13 +1,13 @@
 module.exports = function solveSudoku(matrix) {
   // your solution
     function test(row,col) {
-    var r = [];
     var object = {
         row: Math.floor(row/3)*3,
         col: Math.floor(col/3)*3,
     };
 
     for (var i = 0; i < 9; i++) {
+        var r =[];
         r.push([matrix[row][i], matrix[i][col], matrix[object.row + i % 3][object.col + Math.floor(i / 3)]])
     }
     return r;
